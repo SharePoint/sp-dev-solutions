@@ -15,6 +15,10 @@ extensions:
 ---
 # Site Designs Studio
 
+## NOTICE
+This version has been superceeded by Version 2. 
+Please visit: https://github.com/pnp/sp-site-designs-studio
+
 ## Summary
 A SharePoint Framework WebPart allowing end-users to manage Site Designs and Site Scripts without the need to deal with JSON , PowerShell or REST
 
