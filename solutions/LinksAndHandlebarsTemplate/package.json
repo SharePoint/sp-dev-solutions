@@ -20,7 +20,7 @@
     "core-js": "^3.7.0",
     "deep-diff": "0.3.8",
     "es6-map": "^0.1.5",
-    "handlebars": "4.0.12",
+    "handlebars": "4.7.7",
     "handlebars-helpers": "0.8.4",
     "linqts": "1.8.2",
     "moment": "2.22.2",
