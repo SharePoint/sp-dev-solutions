@@ -17,7 +17,7 @@ If you have questions about how to use SharePoint Framework or any of the provid
 ## Typos, Issues, Bugs and contributions
 Whenever you are submitting any changes to the SharePoint repositories, please follow these recommendations.
 
-* Always fork repository to your own account for applying modifications
+* Always fork repository to your own account and create a new branch with a unique name for applying modifications
 * Do not combine multiple changes to one pull request, please submit for example any samples and documentation updates using separate PRs
 * If you are submitting multiple sample solutions, please create specific PR for each of them
 * If you are submitting typo or documentation fix, you can combine modifications to single PR where suitable
@@ -27,11 +27,11 @@ Here's a high level process for submitting new samples or updates to existing on
 
 1. Sign the Contributor License Agreement (see below)
 2. Fork the main repository to your GitHub account
-3. Create a new branch for your fork for the contribution based on dev branch
-4. Include your changes to your branch
+3. Create a new branch with a unique name based on the master branch, within your forked repo
+4. Include your changes in the new branch
 5. Commit your changes using descriptive commit message - These are used to track changes on the repositories for monthly communications, see [May 2017](https://dev.office.com/blogs/PnP-May-2017-Release) as an example
-6. Create a pull request in your own fork and target 'dev' branch
-7. Fill up the provided PR template with the requested details
+6. Create a pull request in your own fork and target 'master' branch
+7. Fill out the provided PR template with the requested details
 
 > note. Delete the feature specific branch only AFTER your pull request has been processed.
 
@@ -50,34 +50,44 @@ When you are submitting a new sample, it has to follow up below guidelines
 - Do not use period/dot in the folder name of the provided sample
 
 ## Step-by-step on submitting a pull request to this repository
-Please see following wiki post from the GitHub repository wiki for exact steps on submitting new pull requests. 
+1. Navigate to https://github.com/[yourgitaccount]/sp-dev-solutions/pulls
+2. Create a new Pull Request
+3. Confirm the Source repo dropdown contains ```[yourgitaccount]/sp-dev-solution``` and the Source branch dropdown contains your newly created branch name
+4. Confirm the Distination repo dropdown contains ```pnp/sp-dev-solution``` and the Destination branch dropdown contains ```master```
+*![image](https://user-images.githubusercontent.com/38665906/125865172-f992585f-cdcc-412f-9601-0ffc0c6c19d1.png)
+4. Fill out the provided PR template with the requested details
 
-* How to submit a PR to SharePoint repository? - *Work in progress*
+> note. Delete the feature specific branch only AFTER your pull request has been processed.
 
 ## Merging your existing github projects with this repository
 If the sample you wish to contribute is stored in your own Github repository, you can use the following steps to merge it with the Psp-dev-solutions repository:
 
-* Fork the sp-dev-solutions repository from GitHub
-* Create a local git repository 
+1. Fork the sp-dev-solutions repository from GitHub
+2. Create a local git repository 
 ```
 md sp-dev-solutions
 cd sp-dev-solutions
 git init
 ```
-* Pull your forked copy of sp-dev-solutions into your local repository
+3. Pull your forked copy of sp-dev-solutions into your local repository
 ```
-git remote add origin https://github.com/yourgitaccount/sp-dev-solutions.git
-git pull origin dev
+git remote add origin https://github.com/[yourgitaccount]/sp-dev-solutions.git
+git pull origin master
 ```
-* Pull your other project from github into the samples folder of your local copy of sp-dev-solutions
+4. Create a uniquely named branch within your local copy of sp-dev-solutions (confirm you are on the master branch)
 ```  
-git subtree add --prefix=samples/projectname https://github.com/yourgitaccount/projectname.git master
+git branch [branchname]
+git checkout [branchname]
 ```
-
-* Push the changes up to your forked repository
+5. Pull your other project from github into the samples folder of your local copy of sp-dev-solutions
+```  
+git subtree add --prefix=solutions/[projectname] https://github.com/[yourgitaccount]/projectname.git master
 ```
-git push origin dev
+6. Push the changes up to your forked repository
 ```
+git push origin [branchname]
+```
+7. Submit a new Pull Request (see instructions above)
         
 ## Signing the CLA
 Before we can accept your pull requests you will be asked to sign electronically Contributor License Agreement (CLA), which is prerequisite for any contributions to PnP repository. This will be one time process, so for any future contributions you will not be asked to re-sign anything. After the CLA has been signed, our PnP core team members will have a look on your submission for final verification of the submission. Please do not delete your development branch until the submission has been closed.
